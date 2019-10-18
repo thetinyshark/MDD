@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
+
 import SignUpForm from "./pages/SignUpForm";
 import LogInForm from "./pages/LogInForm";
+import Measure from "./pages/Measure";
 
 import "./App.css";
+
+import EzGwhite from './images/EzGwhite.png';
 
 class App extends Component {
   render() {

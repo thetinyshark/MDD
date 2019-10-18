@@ -6,12 +6,12 @@
 
 .App__Aside {
   width: 50%;
-  background-color: #66dac7;
+  background-color: #df9298;
 }
 
 .App__Form {
   width: 50%;
-  background-color: #2e4158;
+  background-color: #3f0409;
   padding: 25px 40px;
   overflow: auto;
 }
@@ -23,8 +23,8 @@
 }
 
 .PageSwitcher__Item {
-  background-color: #4c5d72;
-  color: #9da6b1;
+  background-color: #724c4c;
+  color: #b19d9d;
   padding: 10px 25px;
   cursor: pointer;
   font-size: 0.9em;
@@ -35,7 +35,7 @@
 }
 
 .PageSwitcher__Item--Active {
-  background-color: #5ed0c0;
+  background-color: #dc1222;
   color: white;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .FormTitle__Link {
-  color: #707c8b;
+  color: #8b7070;
   text-decoration: none;
   display: inline-block;
   font-size: 1.7em;
@@ -73,7 +73,7 @@
 
 .FormTitle__Link--Active {
   color: white;
-  border-bottom: 1px solid #199087;
+  border-bottom: 1px solid #901919;
 }
 
 .FormField {
@@ -92,7 +92,7 @@
   border: none;
   color: white;
   outline: none;
-  border-bottom: 1px solid #445366;
+  border-bottom: 1px solid #664444;
   font-size: 1em;
   font-weight: 300;
   padding-bottom: 10px;
@@ -104,7 +104,7 @@
 }
 
 .FormField__Button {
-  background-color: #52c4b9;
+  background-color: #dc1222;
   color: white;
   border: none;
   outline: none;
@@ -115,28 +115,9 @@
 }
 
 .FormField__Link {
-  color: #66707d;
+  color: #7d6666;
   text-decoration: none;
   display: inline-block;
-  border-bottom: 1.5px solid #225e62;
+  border-bottom: 1.5px solid #622222;
   padding-bottom: 5px;
-}
-
-.FormField__CheckboxLabel {
-  color: #646f7d;
-  font-size: 0.9em;
-}
-
-.FormField__Checkbox {
-  position: relative;
-  top: 1.5px;
-}
-
-.FormField__TermsLink {
-  color: white;
-  border-bottom: 1px solid #199087;
-  text-decoration: none;
-  display: inline-block;
-  padding-bottom: 2px;
-  margin-left: 5px;
 }
