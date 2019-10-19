@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
 
+//Pages
 import SignUpForm from "./pages/SignUpForm";
 import LogInForm from "./pages/LogInForm";
 import Measure from "./pages/Measure";
 
 import "./App.css";
 
+//Images
 import EzGwhitesmall from "./images/EzGwhitesmall.png";
 
 class App extends Component {
@@ -58,6 +60,7 @@ class App extends Component {
 
             <Route exact path="/sign-up" component={SignUpForm}></Route>
             <Route path="/log-in" component={LogInForm}></Route>
+            <Route path="/measure" component={Measure}></Route>
           </div>
         </div>
       </Router>
