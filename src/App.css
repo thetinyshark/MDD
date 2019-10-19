@@ -1,16 +1,17 @@
 .App {
   height: 100vh;
   display: flex;
-  color: white;
+  color: #df9298;
 }
 
-.App__Aside {
-  width: 50%;
+.Sidebar {
+  width: 40%;
   background-color: #df9298;
+  padding: 150px 30px;
 }
 
 .App__Form {
-  width: 50%;
+  width: 60%;
   background-color: #3f0409;
   padding: 25px 40px;
   overflow: auto;
@@ -24,7 +25,7 @@
 
 .PageSwitcher__Item {
   background-color: #724c4c;
-  color: #b19d9d;
+  color: #c9b0b0;
   padding: 10px 25px;
   cursor: pointer;
   font-size: 0.9em;
@@ -53,7 +54,7 @@
 }
 
 .FormTitle {
-  color: #707c8b;
+  color: #708b78;
   font-weight: 300;
   margin-bottom: 50px;
 }
@@ -100,7 +101,7 @@
 }
 
 .FormField__Input::placeholder {
-  color: #616e7f;
+  color: #c0a393;
 }
 
 .FormField__Button {
@@ -115,7 +116,7 @@
 }
 
 .FormField__Link {
-  color: #7d6666;
+  color: #c0a393;
   text-decoration: none;
   display: inline-block;
   border-bottom: 1.5px solid #622222;

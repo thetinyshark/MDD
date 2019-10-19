@@ -7,14 +7,17 @@ import Measure from "./pages/Measure";
 
 import "./App.css";
 
-import EzGwhite from './images/EzGwhite.png';
+import EzGwhitesmall from "./images/EzGwhitesmall.png";
 
 class App extends Component {
   render() {
     return (
       <Router basename="/EzG/">
         <div className="App">
-          <div className="App__Aside"></div>
+          <div className="Sidebar">
+            <div className="App__Aside"></div>
+            <img src={EzGwhitesmall} alt="EzGwhitesmall"></img>
+          </div>
           <div className="App__Form">
             <div className="PageSwitcher">
               <NavLink
