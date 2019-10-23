@@ -5,13 +5,9 @@ import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
 import Home from "./pages/Home";
 import Measure from "./pages/Measure";
 
-
 // import "./App.css";
 
-//Images
-// import EzGwhitesmall from "./images/EzGwhitesmall.png";
-
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <Router>
@@ -21,5 +17,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

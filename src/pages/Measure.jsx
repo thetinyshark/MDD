@@ -14,15 +14,24 @@ import Button from "@material-ui/core/Button";
 // import FAQ from ".pages/FAQ"; [set up FAQ page first]
 // import User from ".pages/User"; [set up User page first]
 
+//Images
+import EzGwhitesmall from "../images/EzGwhitesmall.png";
+
 //Components
 import NavBar from "../components/NavBar";
+
+import "./Measure.css";
 
 class Measure extends Component {
   render() {
     return (
       <div>
-        Hello World
-        <div>hihi</div>
+        <div className="Header">
+          <center>
+            <img src={EzGwhitesmall} width="15%" height="auto"></img>
+          </center>
+        </div>
+        <div class="container-fluid"> test</div>
       </div>
     );
   }
