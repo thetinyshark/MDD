@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import SignUpForm from "./SignUpForm";
 import LogInForm from "./LogInForm";
 
-import "../App.css";
+import "./Home.css";
 
 //Images
 import EzGwhitesmall from "../images/EzGwhitesmall.png";
@@ -22,8 +22,7 @@ export default class Home extends Component {
     return (
       <div className="FrontPage">
         <div className="Sidebar">
-          <div className="App__Aside"></div>
-          <img src={EzGwhitesmall} alt="EzGwhitesmall"></img>
+          <img src={EzGwhitesmall} width="100%" height="auto"></img>
         </div>
         <div className="App__Form">
           <div className="FormTitle">
@@ -35,6 +34,7 @@ export default class Home extends Component {
                 backgroundColor: "#724c4c80",
                 color: "white",
                 padding: "10px 25px",
+                margin: "10px",
                 fontSize: 14,
                 display: "inline-block"
               }}

@@ -18,7 +18,6 @@ import Button from "@material-ui/core/Button";
 import NavBar from "../components/NavBar";
 
 class Measure extends Component {
-
   render() {
     return (
       <div>

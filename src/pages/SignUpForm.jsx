@@ -37,6 +37,9 @@ class SignUpForm extends Component {
     return (
       <div className="FormCenter">
         <form onSubmit={this.handleSubmit} className="FormFields">
+          <div className="Greeting">
+            Welcome. Let's get to know you better. 
+          </div>
           <div className="FormField">
             <label className="FormField__Label" htmlFor="name">
               Full Name

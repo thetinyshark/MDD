@@ -1,7 +1,7 @@
-.FrontPage {
+.App {
   height: 100vh;
   display: flex;
-  color: #ffffff;
+  color: #dd7c84;
 }
 
 .Sidebar {
