@@ -50,6 +50,7 @@ export default class Home extends Component {
                 backgroundColor: "#724c4c80",
                 color: "white",
                 padding: "10px 25px",
+                margin: "10px",
                 fontSize: 14,
                 display: "inline-block"
               }}
