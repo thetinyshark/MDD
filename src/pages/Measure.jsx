@@ -18,17 +18,6 @@ import Button from "@material-ui/core/Button";
 import NavBar from "../components/NavBar";
 
 class Measure extends Component {
-  state = {
-    loading: true,
-    amount: 15000,
-    period: 3,
-    start: 0,
-    monthlyInterest: 0,
-    totalInterest: 0,
-    monthlyPayment: 0,
-    totalPayment: 0,
-    data: []
-  };
 
   render() {
     return (
