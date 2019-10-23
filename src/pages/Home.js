@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
 
 //Pages
 import SignUpForm from "./SignUpForm";
@@ -10,7 +9,7 @@ import "../App.css";
 //Images
 import EzGwhitesmall from "../images/EzGwhitesmall.png";
 
-export default class Signup extends Component {
+export default class Home extends Component {
   constructor() {
     super();
     this.state = {
@@ -27,24 +26,6 @@ export default class Signup extends Component {
           <img src={EzGwhitesmall} alt="EzGwhitesmall"></img>
         </div>
         <div className="App__Form">
-          <div className="PageSwitcher">
-            <NavLink
-              to="/log-in"
-              activeClassName="PageSwitcher__Item--Active"
-              className="PageSwitcher__Item"
-            >
-              Log In
-            </NavLink>
-            <NavLink
-              exact
-              to="/sign-up"
-              activeClassName="PageSwitcher__Item--Active"
-              className="PageSwitcher__Item"
-            >
-              Sign Up
-            </NavLink>
-          </div>
-
           <div className="FormTitle">
             <button
               onClick={this.setlogin}
@@ -58,7 +39,7 @@ export default class Signup extends Component {
                 display: "inline-block"
               }}
             >
-              Log In
+              LOG IN
             </button>{" "}
             |{" "}
             <button
@@ -73,7 +54,7 @@ export default class Signup extends Component {
                 display: "inline-block"
               }}
             >
-              Sign Up
+              SIGN UP
             </button>
           </div>
 

@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
 
-import Signup from "./pages/Signup";
-import Measure from "./pages/Measure";
 //Pages
-// import SignUpForm from "./pages/SignUpForm";
-// import LogInForm from "./pages/LogInForm";
-// import Measure from "./pages/Measure";
+import Home from "./pages/Home";
+import Measure from "./pages/Measure";
+
 
 // import "./App.css";
 
@@ -17,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Route exact path="/" component={Signup} />
+        <Route exact path="/" component={Home} />
         <Route path="/measure" component={Measure}></Route>
       </Router>
     );

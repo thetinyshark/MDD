@@ -34,10 +34,7 @@ class LogInForm extends Component {
   render() {
     return (
       <div className="FormCenter">
-        <form
-          onSubmit={this.handleSubmit}
-          className="FormFields"
-        >
+        <form onSubmit={this.handleSubmit} className="FormFields">
           <div className="FormField">
             <label className="FormField__Label" htmlFor="email">
               E-Mail Address
@@ -71,9 +68,6 @@ class LogInForm extends Component {
           <div className="FormField">
             <Link to="/measure">
               <button className="FormField__Button mr-20">Log In</button>{" "}
-            </Link>
-            <Link to="/sign-up" className="FormField__Link">
-              Create an account
             </Link>
           </div>
         </form>
