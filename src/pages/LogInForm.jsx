@@ -37,7 +37,6 @@ class LogInForm extends Component {
         <form
           onSubmit={this.handleSubmit}
           className="FormFields"
-          onSubmit={this.handleSubmit}
         >
           <div className="FormField">
             <label className="FormField__Label" htmlFor="email">

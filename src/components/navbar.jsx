@@ -1,18 +1,20 @@
-import React, { Component, Fragment } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
 
 // Material UI
-import { makeStyles } from "@material-ui/core/styles";
+import withStyles from "@material-ui/styles/withStyles";
 import AppBar from "@material-ui/core/AppBar";
+import Grid from "@material-ui/core/Grid";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
 
 //Icons
 import PersonIcon from "@material-ui/icons/Person";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import HelpIcon from "@material-ui/icons/Help";
 
-class Navbar extends Component {
+class NavBar extends Component {
   render() {
     return (
       <AppBar>
@@ -31,3 +33,5 @@ class Navbar extends Component {
     );
   }
 }
+
+export default NavBar;
