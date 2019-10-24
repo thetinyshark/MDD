@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-import withStyles from "@material-ui/styles/withStyles";
 import { withRouter, Link } from "react-router-dom";
-
-//Material UI
-import Grid from "@material-ui/core/Grid";
-import Slider from "@material-ui/core/Slider";
-import Button from "@material-ui/core/Button";
+import Chart from "chart.js";
 
 //Pages
 // import FAQ from ".pages/FAQ"; [set up FAQ page first]
@@ -15,18 +10,16 @@ import Button from "@material-ui/core/Button";
 import EzGwhitesmall from "../images/EzGwhitesmall.png";
 
 //Components
-import NavBar from "../components/NavBar";
+//import NavBar from "../components/NavBar";
 
 import "./Measure.css";
 
 class Measure extends Component {
-  //idk what this does yet
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      data: {
-        values: [{ x: 0, y: 0 }]
-      }
+      name: "Cherie", //change to username???how??
+      heartratebpm: 60
     };
   }
 
@@ -39,10 +32,49 @@ class Measure extends Component {
               <img src={EzGwhitesmall} width="15%" height="auto"></img>
             </center>
           </div>
-          <div className="UserGreeting"> Hello, (Name)</div>
         </div>
+
+        <div className="UserGreeting"> Hello, {this.state.name}</div>
+
+        <center>
+          <div>
+            <button
+              onclick="HeartRate()"
+              style={{
+                borderRadius: "50%",
+                borderColor: "#930c17",
+                backgroundColor: "#dc1222",
+                color: "white",
+                margin: "20px",
+                fontSize: 30,
+                display: "block",
+                height: "200px",
+                width: "200px",
+                outline: "none"
+              }}
+            >
+              <span>{this.state.heartratebpm}</span> bpm
+            </button>
+          </div>
+        </center>
+
+        <center>
+          <span>{this.heartrateslider()}</span>
+          <input
+            className="slider"
+            type="range"
+            min="1"
+            max="100"
+            value={this.state.heartratebpm}
+            id="heartrate"
+          ></input>
+        </center>
       </div>
     );
+  }
+
+  heartrateslider() {
+    var slider = document.getElementById("heartrate");
   }
 }
 

@@ -11,7 +11,24 @@
 }
 
 .UserGreeting {
-  padding: 20px;
+  padding: 30px;
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 85%; /* Full-width */
+  height: 25px;
+  background-image: linear-gradient(
+    to right,
+    green 25%,
+    yellow 35%,
+    red 60%
+  ); /*change to proper limits*/
+  outline: none;
+  opacity: 0.9;
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
 }
