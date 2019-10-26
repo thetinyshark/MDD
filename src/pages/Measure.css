@@ -1,3 +1,8 @@
+.NavBar {
+  position: absolute;
+  right: 5px;
+}
+
 .Header {
   padding: 20px;
   background-color: #dc1222;
@@ -23,11 +28,11 @@
   height: 25px;
   background-image: linear-gradient(
     to right,
-    red 5%,
-    yellow 10%,   
-    green 25%,
-    yellow 55%,
-    red 80%
+    #dc1222 3%,
+    yellow 10%,
+    #23dc12 25%,
+    yellow 60%,
+    #dc1222 80%
   ); /*change to proper limits*/
   outline: none;
   opacity: 0.9;
@@ -37,5 +42,5 @@
 
 .sliderdescription {
   margin-left: 40px;
-  font-size: 20px
+  font-size: 20px;
 }

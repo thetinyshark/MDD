@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 // import { FirebaseContext } from '../components/Firebase';
-import firebase from '../components/Firebase/firebase'
-
+import firebase from "../components/Firebase/firebase";
 
 //Pages
 // import FAQ from ".pages/FAQ"; [set up FAQ page first]
@@ -34,24 +33,27 @@ class Measure extends Component {
     super();
     this.state = {
       name: "Cherie", //change to username???how??
-      heartratebpm: 70 //to read from database??
+      heartratebpm: 92 //to read from database??
     };
   }
 
   componentDidMount() {
-    console.log('hello')
-    const measureRef = firebase.database().ref('measures');
-    console.log(measureRef)
+    console.log("hello");
+    const measureRef = firebase.database().ref("measures");
+    console.log(measureRef);
     // measureRef.on("value", function (snapshot) {
     //   console.log('hello')
     //   var hello = snapshot.val()
     //   console.log(hello)
     // });
-    firebase.database().ref('/measures').once('value').then(function(snapshot) {
-      console.log(Object.keys(snapshot.val()).length)
-      var snapshot = snapshot.val();
-    });
-
+    firebase
+      .database()
+      .ref("/measures")
+      .once("value")
+      .then(function(snapshot) {
+        console.log(Object.keys(snapshot.val()).length);
+        var snapshot = snapshot.val();
+      });
   }
 
   render() {
@@ -64,6 +66,9 @@ class Measure extends Component {
             </center>
           </div>
         </div>
+        <div className="NavBar">
+          <NavBar></NavBar>
+        </div>
 
         <div className="UserGreeting"> Hello, {this.state.name}</div>
 
@@ -74,7 +79,7 @@ class Measure extends Component {
               style={{
                 borderRadius: "50%",
                 borderColor: "#930c17",
-                backgroundColor: "#dc1222",
+                backgroundColor: "#FF584C",
                 color: "white",
                 margin: "20px",
                 fontSize: 30,
