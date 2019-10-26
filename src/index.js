@@ -7,5 +7,17 @@ import App from "./App.js";
 import registerServiceWorker from "./registerServiceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+// import Firebase, { FirebaseContext } from './components/Firebase';
+
+// ReactDOM.render(
+//   <FirebaseContext.Provider value={new Firebase()}>
+//     <App />
+//   </FirebaseContext.Provider>,
+//
+// document.getElementById("root"));
+
+ReactDOM.render(
+    <App />,
+
+document.getElementById("root"));
 registerServiceWorker();
