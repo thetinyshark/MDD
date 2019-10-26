@@ -27,6 +27,29 @@
 
     <!-- add firebase here-->
     <title>EzG</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+           https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBdpbGW0linYYbRvO1UquX7D8npEyarOo4",
+        authDomain: "esp8266test-cac52.firebaseapp.com",
+        databaseURL: "https://esp8266test-cac52.firebaseio.com",
+        projectId: "esp8266test-cac52",
+        storageBucket: "esp8266test-cac52.appspot.com",
+        messagingSenderId: "146384947058",
+        appId: "1:146384947058:web:dd7da7f7e53040357a7feb",
+        measurementId: "G-XWKH219GFX"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

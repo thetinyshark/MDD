@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
-import Chart from "chart.js";
+// import { FirebaseContext } from '../components/Firebase';
+import firebase from '../components/Firebase/firebase'
+
 
 //Pages
 // import FAQ from ".pages/FAQ"; [set up FAQ page first]
@@ -10,9 +12,22 @@ import Chart from "chart.js";
 import EzGwhitesmall from "../images/EzGwhitesmall.png";
 
 //Components
-//import NavBar from "../components/NavBar";
+import NavBar from "../components/navbar";
 
 import "./Measure.css";
+
+// <FirebaseContext.Consumer>
+//     {firebase => {
+//       return <div>I've access to Firebase and render something.</div>;
+//     }}
+//   </FirebaseContext.Consumer>
+// const Measure = () => (
+//   <div>
+//     <FirebaseContext.Consumer>
+//       {firebase => <MeasureComponent firebase={firebase} />}
+//     </FirebaseContext.Consumer>
+//   </div>
+// );
 
 class Measure extends Component {
   constructor() {
@@ -21,6 +36,22 @@ class Measure extends Component {
       name: "Cherie", //change to username???how??
       heartratebpm: 70 //to read from database??
     };
+  }
+
+  componentDidMount() {
+    console.log('hello')
+    const measureRef = firebase.database().ref('measures');
+    console.log(measureRef)
+    // measureRef.on("value", function (snapshot) {
+    //   console.log('hello')
+    //   var hello = snapshot.val()
+    //   console.log(hello)
+    // });
+    firebase.database().ref('/measures').once('value').then(function(snapshot) {
+      console.log(Object.keys(snapshot.val()).length)
+      var snapshot = snapshot.val();
+    });
+
   }
 
   render() {
