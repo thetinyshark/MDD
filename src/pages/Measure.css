@@ -23,12 +23,19 @@
   height: 25px;
   background-image: linear-gradient(
     to right,
+    red 5%,
+    yellow 10%,   
     green 25%,
-    yellow 35%,
-    red 60%
+    yellow 55%,
+    red 80%
   ); /*change to proper limits*/
   outline: none;
   opacity: 0.9;
   -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
   transition: opacity 0.2s;
+}
+
+.sliderdescription {
+  margin-left: 40px;
+  font-size: 20px
 }

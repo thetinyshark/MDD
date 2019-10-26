@@ -19,7 +19,7 @@ class Measure extends Component {
     super();
     this.state = {
       name: "Cherie", //change to username???how??
-      heartratebpm: 60
+      heartratebpm: 70 //to read from database??
     };
   }
 
@@ -63,18 +63,27 @@ class Measure extends Component {
           <input
             className="slider"
             type="range"
-            min="1"
-            max="100"
+            min="10"
+            max="120"
             value={this.state.heartratebpm}
             id="heartrate"
           ></input>
         </center>
+
+        <div className="sliderdescription">
+          Status:
+          <span>{this.bpmdescription()}</span>
+        </div>
       </div>
     );
   }
 
   heartrateslider() {
     var slider = document.getElementById("heartrate");
+  }
+
+  bpmdescription() {
+    //add conditionals for bpm
   }
 }
 
