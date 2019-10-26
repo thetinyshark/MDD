@@ -17,7 +17,7 @@ import firebase from '../components/Firebase/firebase'
 import EzGwhitesmall from "../images/EzGwhitesmall.png";
 
 //Components
-import NavBar from "../components/NavBar";
+import NavBar from "../components/navbar";
 
 import "./Measure.css";
 
