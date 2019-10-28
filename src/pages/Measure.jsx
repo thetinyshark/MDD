@@ -29,8 +29,8 @@ import "./Measure.css";
 // );
 
 class Measure extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       name: "Cherie", //change to username???how??
       heartratebpm: 92 //to read from database??

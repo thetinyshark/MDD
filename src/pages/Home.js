@@ -67,7 +67,10 @@ export default class Home extends Component {
   }
 
   setlogin = () => {
-    this.setState({ login_state: true, signup_state: false });
+    this.setState({ login_state: true, signup_state: false }, //this.state.login_state?
+      () => {
+        console.log('Callback', this.state.login_state)
+      }); 
   };
 
   setsignup = () => {
