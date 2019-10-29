@@ -15,6 +15,7 @@ import EzGwhitesmall from "../images/EzGwhitesmall.png";
 import NavBar from "../components/navbar";
 
 import "./Measure.css";
+import { array } from "prop-types";
 
 // <FirebaseContext.Consumer>
 //     {firebase => {
@@ -40,6 +41,8 @@ class Measure extends Component {
 
   componentDidMount() {
     console.log("hello");
+    const y = [];
+    const timestamps = [];
     const measureRef = firebase.database().ref("measures");
     console.log(measureRef);
     // measureRef.on("value", function (snapshot) {
@@ -52,8 +55,17 @@ class Measure extends Component {
       .ref("/measures")
       .once("value")
       .then(function(snapshot) {
+        y.push(snapshot.val().sensorValue);
+        timestamps.push(snapshot.val().timestamp); 
+
         console.log(Object.keys(snapshot.val()).length);
-        var snapshot = snapshot.val();
+        snapshot.forEach((child) => {
+          console.log(child.key, child.val());
+          y.push(child.val());
+
+        });
+        
+        
       });
   }
 
@@ -124,7 +136,7 @@ class Measure extends Component {
   }
 }
 
-class Graph extends React.Component {
+class Graph extends Component {
   render() {
     return (
       <Plot
