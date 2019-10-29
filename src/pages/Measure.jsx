@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 // import { FirebaseContext } from '../components/Firebase';
 import firebase from "../components/Firebase/firebase";
+import Plot from 'react-plotly.js';
 
 //Pages
 // import FAQ from ".pages/FAQ"; [set up FAQ page first]
@@ -123,4 +124,23 @@ class Measure extends Component {
   }
 }
 
+class Graph extends React.Component {
+  render() {
+    return (
+      <Plot
+        data={[
+          {
+            x: [1, 2, 3],
+            y: [2, 6, 3],
+            type: 'scatter',
+            mode: 'lines+markers',
+            marker: {color: 'red'},
+          },
+          {type: 'bar', x: [1, 2, 3], y: [2, 5, 3]},
+        ]}
+        layout={{width: 320, height: 240, title: 'A Fancy Plot'}}
+      />
+    );
+  }
+}
 export default withRouter(Measure);
