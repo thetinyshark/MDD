@@ -13,6 +13,7 @@ import EzGwhitesmall from "../images/EzGwhitesmall.png";
 
 //Components
 import NavBar from "../components/navbar";
+import Graph from "./components/Graph";
 
 import "./Measure.css";
 import { array } from "prop-types";

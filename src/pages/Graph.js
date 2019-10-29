@@ -4,7 +4,7 @@ import { withRouter, Link } from "react-router-dom";
 import firebase from "../components/Firebase/firebase";
 import Plot from 'react-plotly.js';
 
-class Graph extends Component {
+export default class Graph extends Component {
 
     constructor(props) {
         super(props);
@@ -40,8 +40,7 @@ class Graph extends Component {
             });
             
             
-          });
-      }
+          };
 
     render() {
       return (
@@ -60,4 +59,6 @@ class Graph extends Component {
         />
       );
     }
-  }
+}
+
+  
