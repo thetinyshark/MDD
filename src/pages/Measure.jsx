@@ -13,7 +13,7 @@ import EzGwhitesmall from "../images/EzGwhitesmall.png";
 
 //Components
 import NavBar from "../components/navbar";
-import Graph from "./components/Graph";
+import Graph from "./Graph";
 
 import "./Measure.css";
 import { array } from "prop-types";
@@ -37,9 +37,38 @@ class Measure extends Component {
     super(props);
     this.state = {
       name: "Cherie", //change to username???how??
-      heartratebpm: 92 //to read from database??
+      heartratebpm: 59 //to read from database??
     };
   }
+
+  componentDidMount() {
+    console.log("hello");
+    var y = [];
+    const timestamps = [];
+    const measureRef = firebase.database().ref("measures");
+    console.log(measureRef);
+    // measureRef.on("value", function (snapshot) {
+    //   console.log('hello')
+    //   var hello = snapshot.val()
+    //   console.log(hello)
+    // });
+    firebase
+      .database()
+      .ref("/measures")
+      .once("value")
+      .then(function(snapshot) {
+        y.push(snapshot.val().sensorValue);
+        timestamps.push(snapshot.val().timestamp); 
+
+        // console.log(Object.keys(snapshot.val()).length);
+        // snapshot.forEach((child) => {
+        //   console.log(child.key, child.val());
+        //   y.push(child.val());
+
+        });
+        
+        
+      };
 
   render() {
     return (
@@ -58,6 +87,9 @@ class Measure extends Component {
         <div className="UserGreeting"> Hello, {this.state.name}</div>
 
         <center>
+          <div className = "Graph">
+            <Graph></Graph>
+          </div>
           <div>
             <button
               onclick="HeartRate()"
