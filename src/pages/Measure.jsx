@@ -37,7 +37,7 @@ class Measure extends Component {
     super(props);
     this.state = {
       name: "Cherie", //change to username???how??
-      heartratebpm: 59 //to read from database??
+      heartratebpm: 100 //to read from database??
     };
   }
 
@@ -125,7 +125,7 @@ class Measure extends Component {
 
         <div className="sliderdescription">
           Status:
-          <span>{this.bpmdescription()}</span>
+          <span>{this.bpmdescription}</span>
         </div>
       </div>
     );
@@ -136,9 +136,24 @@ class Measure extends Component {
   }
 
   bpmdescription() {
-    //add conditionals for bpm
+      if (this.state.heartratebpm >= 100) {
+        return <span>Dangerously high – consult your doctor</span>;
+      } else if (this.state.heartratebpm < 100 && this.state.heartratebpm >= 83) {
+        return <span>Very Poor</span>;
+      } else if (this.state.heartratebpm < 83 && this.state.heartratebpm >= 76) {
+        return <span>Poor</span>;
+      } else if (this.state.heartratebpm < 76 && this.state.heartratebpm >= 66) {
+        return <span>Average</span>;
+      } else if (this.state.heartratebpm < 66 && this.state.heartratebpm >= 60) {
+        return <span>Good</span>;
+      } else if (this.state.heartratebpm < 60 && this.state.heartratebpm >= 45) {
+        return <span>Atheletic</span>;
+      } else if (this.state.heartratebpm < 45) {
+        return <span>Unusually low – consult your doctor</span>;
+      }
   }
 }
+
 
 
 export default withRouter(Measure);
