@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
-// import { FirebaseContext } from '../components/Firebase';
-import firebase from "../components/Firebase/firebase";
-import Plot from 'react-plotly.js';
+
 
 //Pages
 // import FAQ from ".pages/FAQ"; [set up FAQ page first]
@@ -40,35 +38,6 @@ class Measure extends Component {
       heartratebpm: 100 //to read from database??
     };
   }
-
-  componentDidMount() {
-    console.log("hello");
-    var y = [];
-    const timestamps = [];
-    const measureRef = firebase.database().ref("measures");
-    console.log(measureRef);
-    // measureRef.on("value", function (snapshot) {
-    //   console.log('hello')
-    //   var hello = snapshot.val()
-    //   console.log(hello)
-    // });
-    firebase
-      .database()
-      .ref("/measures")
-      .once("value")
-      .then(function(snapshot) {
-        y.push(snapshot.val().sensorValue);
-        timestamps.push(snapshot.val().timestamp); 
-
-        // console.log(Object.keys(snapshot.val()).length);
-        // snapshot.forEach((child) => {
-        //   console.log(child.key, child.val());
-        //   y.push(child.val());
-
-        });
-        
-        
-      };
 
   render() {
     return (
@@ -125,7 +94,7 @@ class Measure extends Component {
 
         <div className="sliderdescription">
           Status:
-          <span>{this.bpmdescription}</span>
+          <span>{this.bpmdescription()}</span>
         </div>
       </div>
     );

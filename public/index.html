@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -17,38 +17,46 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+      It will be replaced with the URL of the public folder during the build.
+      Only files inside the public folder can be referenced from the HTML.
 
       Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
+      Learn how to configure a non-root public URL by running npm run build.
     -->
+     <!-- add firebase here-->
+     <title>EzG</title>
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+ 
+     <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
 
-    <!-- add firebase here-->
-    <title>EzG</title>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+    
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.2.3/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.2.3/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.2.3/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.2.3/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.2.3/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-           https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
-
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyBdpbGW0linYYbRvO1UquX7D8npEyarOo4",
-        authDomain: "esp8266test-cac52.firebaseapp.com",
-        databaseURL: "https://esp8266test-cac52.firebaseio.com",
-        projectId: "esp8266test-cac52",
-        storageBucket: "esp8266test-cac52.appspot.com",
-        messagingSenderId: "146384947058",
-        appId: "1:146384947058:web:dd7da7f7e53040357a7feb",
-        measurementId: "G-XWKH219GFX"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
+    <script> 
+    const config = {
+    apiKey: "AIzaSyBdpbGW0linYYbRvO1UquX7D8npEyarOo4",
+    authDomain: "esp8266test-cac52.firebaseapp.com",
+    databaseURL: "https://esp8266test-cac52.firebaseio.com",
+    projectId: "esp8266test-cac52",
+    storageBucket: "esp8266test-cac52.appspot.com",
+    messagingSenderId: "146384947058",
+    appId: "1:146384947058:web:dd7da7f7e53040357a7feb",
+    measurementId: "G-XWKH219GFX",
+    };
+    firebase.initializeApp(config);
+    firebase.analytics();
     </script>
   </head>
   <body>
@@ -61,8 +69,8 @@
       You can add webfonts, meta tags, or analytics to this file.
       The build step will place the bundled scripts into the <body> tag.
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
+      To begin the development, run npm start or yarn start.
+      To create a production bundle, use npm run build or yarn build.
     -->
   </body>
 </html>

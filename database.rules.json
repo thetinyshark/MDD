@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "measures": {
+      ".read": "true",
+      ".write": "true"
+    },
+    "timestamped_measures": {
+      ".read": "true",
+      ".write": "true"
+    }
+  }
+}
