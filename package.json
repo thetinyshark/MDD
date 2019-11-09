@@ -9,6 +9,7 @@
     "@material-ui/icons": "^4.5.1",
     "@material-ui/styles": "^4.5.0",
     "@types/react-plotly.js": "^2.2.4",
+    "@types/websocket": "^1.0.0",
     "bootstrap": "^4.3.1",
     "chart.js": "^2.9.2",
     "firebase": "^7.2.1",
@@ -22,7 +23,10 @@
     "react-router-dom": "^5.1.2",
     "react-rt-chart": "^2.0.0",
     "react-scripts": "3.2.0",
-    "typeface-roboto": "0.0.75"
+    "socket.io-client": "^2.3.0",
+    "typeface-roboto": "0.0.75",
+    "websocket": "^1.0.30",
+    "ws": "^7.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

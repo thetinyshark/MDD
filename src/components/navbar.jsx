@@ -53,6 +53,9 @@ export default function LongMenu() {
         <MenuItem component={Link} to="/FAQ">
           FAQ
         </MenuItem>
+        <MenuItem component={Link} to="/">
+          Log Out
+        </MenuItem>
       </Menu>
     </div>
   );

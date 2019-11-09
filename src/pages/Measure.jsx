@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
+import firebase from "../components/Firebase/firebase";
 
 
 //Pages
@@ -14,7 +15,6 @@ import NavBar from "../components/navbar";
 import Graph from "./Graph";
 
 import "./Measure.css";
-import { array } from "prop-types";
 
 // <FirebaseContext.Consumer>
 //     {firebase => {
@@ -34,9 +34,45 @@ class Measure extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Cherie", //change to username???how??
-      heartratebpm: 100 //to read from database??
+      name: "",
+      heartbpm: "",
+      items: [],
+      user: null 
     };
+
+  
+  }
+
+  componentDidMount() {
+    //const itemsRef = firebase.database().ref(`items/${this.userId}`);
+    const itemsRef = firebase.database().ref("items");
+    itemsRef.on("value", snapshot => {
+      let items = snapshot.val();
+      let newState = [];
+
+      const rootRef = firebase.database().ref().child("measures");
+      rootRef.orderByChild("timestamp").limitToLast(1).on("value", snapshot => {
+          console.log(snapshot.val());
+          var uwuobject = snapshot.val();
+          var uwuobject2 = Object.keys(uwuobject);
+          var uniqkey = uwuobject2[0]; //get the pushID
+          console.log("key");
+          console.log(uniqkey);
+          //console.log(snapshot.val().child(uwuobject2[0]).height)
+          let node = snapshot.val();
+          var bignode = Object.keys(node).map(key => node[key]);
+          console.log(bignode[0].sensorValue);
+
+          this.setState({
+            heartbpm: bignode[0].sensorValue, //changes the HTML to the largest height
+            entry: uniqkey //can't show the uniq pushID in the HTML using bignode[0]
+          });
+        });
+
+      this.setState({
+        items: newState
+      });
+    });
   }
 
   render() {
@@ -53,7 +89,7 @@ class Measure extends Component {
           <NavBar></NavBar>
         </div>
 
-        <div className="UserGreeting"> Hello, {this.state.name}</div>
+        <div className="UserGreeting"> Hello {this.state.name}</div>
 
         <center>
           <div className = "Graph">
@@ -75,7 +111,7 @@ class Measure extends Component {
                 outline: "none"
               }}
             >
-              <span>{this.state.heartratebpm}</span> bpm
+              <span>{this.state.heartbpm}</span> bpm
             </button>
           </div>
         </center>
@@ -87,14 +123,14 @@ class Measure extends Component {
             type="range"
             min="10"
             max="120"
-            value={this.state.heartratebpm}
+            value={this.state.heartbpm}
             id="heartrate"
           ></input>
         </center>
 
         <div className="sliderdescription">
           Status:
-          <span>{this.bpmdescription()}</span>
+          <span> {this.bpmdescription()}</span>
         </div>
       </div>
     );
@@ -105,24 +141,22 @@ class Measure extends Component {
   }
 
   bpmdescription() {
-      if (this.state.heartratebpm >= 100) {
+      if (this.state.heartbpm >= 100) {
         return <span>Dangerously high – consult your doctor</span>;
-      } else if (this.state.heartratebpm < 100 && this.state.heartratebpm >= 83) {
+      } else if (this.state.heartbpm < 100 && this.state.heartbpm >= 83) {
         return <span>Very Poor</span>;
-      } else if (this.state.heartratebpm < 83 && this.state.heartratebpm >= 76) {
+      } else if (this.state.heartbpm < 83 && this.state.heartbpm >= 76) {
         return <span>Poor</span>;
-      } else if (this.state.heartratebpm < 76 && this.state.heartratebpm >= 66) {
+      } else if (this.state.heartbpm < 76 && this.state.heartbpm >= 66) {
         return <span>Average</span>;
-      } else if (this.state.heartratebpm < 66 && this.state.heartratebpm >= 60) {
+      } else if (this.state.heartbpm < 66 && this.state.heartbpm >= 60) {
         return <span>Good</span>;
-      } else if (this.state.heartratebpm < 60 && this.state.heartratebpm >= 45) {
+      } else if (this.state.heartbpm < 60 && this.state.heartbpm >= 45) {
         return <span>Atheletic</span>;
-      } else if (this.state.heartratebpm < 45) {
+      } else if (this.state.heartbpm < 45) {
         return <span>Unusually low – consult your doctor</span>;
       }
   }
 }
-
-
 
 export default withRouter(Measure);
